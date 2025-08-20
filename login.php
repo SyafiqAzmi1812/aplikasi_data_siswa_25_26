@@ -4,21 +4,60 @@ $title = "Aplikasi Data Siswa | LOGIN";
 include "./template/header.php";
 
 ?>
+
 <section class="container pt-2">
     <div class="card p-5">
         <h1>HALAMAN LOGIN</h1>
 
-         <?php if (isset($_SESSION["REGISTER_SUCCESS"])) : ?>
+        <?php if (isset($_SESSION["REGISTER_SUCCESS"])) : ?>
             <div class="alert alert-success" role="alert">
                 <?= $_SESSION["REGISTER_SUCCESS"] ?>
+            </div>
+        <?php
+            session_unset();
+        endif; ?>
+
+        <!-- Input Validation -->
+        <?php if (isset($_SESSION["VALIDATION_INPUT"])) : ?>
+            <div class="alert alert-danger" role="alert">
+                <?= $_SESSION["VALIDATION_INPUT"] ?>
+            </div>
+        <?php
+            session_unset();
+        endif; ?>
+        
+        <!--  -->
+        <?php if (isset($_SESSION["VALIDATION_EMAIL_EXIST"])) : ?>
+            <div class="alert alert-danger" role="alert">
+                <?= $_SESSION["VALIDATION_EMAIL_EXIST"] ?>
+            </div>
+        <?php
+            session_unset();
+        
+        endif; ?>
+        <!--  -->
+        <?php if (isset($_SESSION["WRONG_PASSWORD"])) : ?>
+            <div class="alert alert-danger" role="alert">
+                <?= $_SESSION["WRONG_PASSWORD"] ?>
             </div>
 
         <?php
             session_unset();
         endif; ?>
         
+        <!--  -->
+        <?php if (isset($_SESSION["AUTH_SUCCESS"])) : ?>
+            <div class="alert alert-danger" role="alert">
+                <?= $_SESSION["AUTH_SUCCESS"] ?>
+            </div>
+
+        <?php
+            session_unset();
+        endif; ?>
+
+
         <card>
-            <form action="./db/login.php">
+            <form action="./db/login.php" method="post">
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Email address</label>
                     <input type

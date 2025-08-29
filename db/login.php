@@ -12,7 +12,9 @@ if ($email == "" || $password == "" ) {
 }
 
 //CEK EMAIL
-$cekUser = "SELECT * FROM user WHERE email = '$email' ";
+$cekUser = "SELECT * FROM user 
+
+WHERE email = '$email' ";
 $user = mysqli_query($connection, $cekUser);
 
 if($connection->query($cekUser)->num_rows == 0) {

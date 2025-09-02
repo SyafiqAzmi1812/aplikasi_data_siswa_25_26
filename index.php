@@ -1,10 +1,14 @@
 <?php
 session_start();
 $title = "Aplikasi Data Siswa | Home";
+include "template/header.php";
+
 ?>
-    <h1 style="text-align: center;">Home</h1>
-    <a href="student.php">Student</a>
-    <a href="book.php">Buku</a>
-    <a href="todo.php">Todo</a>
-</body>
-</html>
+
+<div class="container mt-5">
+    <div class="card p-2">
+        <h1 style="text-align: center;">Home</h1>
+    </div>
+</div>
+
+<?php include "./template/footer.php" ?>

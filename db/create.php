@@ -12,7 +12,7 @@ $sql = "INSERT INTO students (full_nama, gender, classes, major)
 
 if($connection->query($sql)) {
     $_SESSION['message'] = "students data has created succesfully";
-    header("Location: ../index.php");
+    header("Location: ../student.php");
     $connection->close();
     die();
 }

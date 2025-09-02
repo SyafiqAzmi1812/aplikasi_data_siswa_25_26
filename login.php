@@ -9,6 +9,14 @@ include "./template/header.php";
     <div class="card p-5">
         <h1>HALAMAN LOGIN</h1>
 
+        <?php if (isset($_SESSION["LOGOUT"])) : ?>
+            <div class="alert alert-success" role="alert">
+                <?= $_SESSION["LOGOUT"] ?>
+            </div>
+        <?php
+            session_unset();
+        endif; ?>
+
         <?php if (isset($_SESSION["REGISTER_SUCCESS"])) : ?>
             <div class="alert alert-success" role="alert">
                 <?= $_SESSION["REGISTER_SUCCESS"] ?>

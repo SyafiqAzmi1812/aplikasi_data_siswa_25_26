@@ -32,9 +32,7 @@ if (isset($_SESSION["is_login"]) == false ) {
 
 <div class="container border mt-4 p-4">
     <h1 class="text-center">Aplikasi Data Siswa</h1>
-    <div class="text-center">
-        <a class="btn btn-success" href="create-student.php">Create Student</a>
-    </div>
+    
     
     <div class="table mt-3">
     <table class="table table-stripped">
@@ -66,6 +64,9 @@ if (isset($_SESSION["is_login"]) == false ) {
             </tbody>
             
         </table>
+        <div class="mr-auto">
+        <a class="btn btn-success" href="create-student.php">Create Student</a>
+    </div>
     </div>
 
     </div>
